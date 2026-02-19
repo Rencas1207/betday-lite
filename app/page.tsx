@@ -1,18 +1,9 @@
-import type { Match, MatchesApiResponse } from '@/app/src/types';
 import { groupMatchesByTime } from '@/app/src/utils';
 import TimelineSection from './src/components/TimelineSection';
 import PublicLayout from './src/layout/PublicLayout';
+import { getMatches } from './src/services/get-matches.services';
 
-async function getMatches(): Promise<Match[]> {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/matches`, {
-    next: { revalidate: 60 }
-  });
-  if (!res.ok) {
-    throw new Error('Failed to fetch matches');
-  }
-  const data: MatchesApiResponse = await res.json();
-  return data.data.matches;
-}
+export const dynamic = 'force-dynamic';
 
 export default async function Page() {
   const matches = await getMatches();
