@@ -4,7 +4,8 @@ import TimelineSection from './src/components/TimelineSection';
 import PublicLayout from './src/layout/PublicLayout';
 
 async function getMatches(): Promise<Match[]> {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/matches`, {
+  const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+  const res = await fetch(`${BASE_URL}/api/matches`, {
     next: { revalidate: 60 }
   });
   if (!res.ok) {
