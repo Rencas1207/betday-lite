@@ -40,10 +40,13 @@
   "tailwindCSS.classAttributes": ["class", "className", "ngClass", ".*Styles"],
   "cSpell.words": [
     "apuestas",
+    "Bienvenido",
     "deportivas",
     "destino",
+    "Iniciar",
     "mejores",
     "plataforma",
-    "pronósticos"
+    "pronósticos",
+    "sesión"
   ]
 }
