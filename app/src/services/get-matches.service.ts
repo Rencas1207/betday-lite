@@ -1,4 +1,4 @@
-import type { Match, MatchesApiResponse } from '../types';
+import type { Match, MatchesApiResponse } from '../interfaces';
 
 export const getMatches = async (): Promise<Match[]> => {
   const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;

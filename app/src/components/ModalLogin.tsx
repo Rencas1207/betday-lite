@@ -1,13 +1,17 @@
 'use client';
 
+import { Button } from '@betday-lite/button';
+import { Input } from '@betday-lite/input';
+import { Typography } from '@betday-lite/typography';
 import { useAtom } from 'jotai';
+import { LockKeyhole, ShieldCheck, User, X } from 'lucide-react';
 import { signIn } from 'next-auth/react';
 import { toast } from 'sonner';
-import { loginModalAtom, pendingBetAtom } from '../store/globals';
+import { loginModalAtom, pendingBetsAtom } from '../store/globals';
 
 const ModalLogin = () => {
   const [showModal, setShowModal] = useAtom(loginModalAtom);
-  const [pendingBet, setPendingBet] = useAtom(pendingBetAtom);
+  const [pendingBets] = useAtom(pendingBetsAtom);
 
   const handleModalLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -27,11 +31,10 @@ const ModalLogin = () => {
 
     setShowModal(false);
 
-    if (pendingBet) {
+    if (pendingBets.length > 0) {
       toast.success(
-        `Apuesta realizada en ${pendingBet.match.homeTeam.shortName} vs ${pendingBet.match.awayTeam.shortName}`
+        `Apuesta realizada en ${pendingBets.map((bet) => `${bet.match.homeTeam.shortName} vs ${bet.match.awayTeam.shortName}`).join(', ')}`
       );
-      setPendingBet(null);
     } else {
       toast.success('¡Sesión iniciada!');
     }
@@ -40,45 +43,86 @@ const ModalLogin = () => {
   return (
     <>
       {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm">
-          <div className="w-full max-w-md rounded-2xl border border-white/10 bg-zinc-900 p-8 shadow-2xl">
-            <h2 className="mb-6 text-center text-2xl font-bold">
-              Inicia sesión
-            </h2>
-            {pendingBet && (
-              <p className="mb-6 text-sm text-zinc-400">
-                Necesitas una cuenta para apostar en{' '}
-                {pendingBet?.match.homeTeam.name} vs{' '}
-                {pendingBet?.match.awayTeam.name}
-              </p>
-            )}
-            <form onSubmit={handleModalLogin} className="space-y-4">
-              <input
+        <div className="fixed inset-0 z-100 flex items-center justify-center bg-slate-950/60 p-4 backdrop-blur-md">
+          <div className="animate-in fade-in zoom-in relative w-full max-w-md rounded-[2.5rem] border border-slate-200 bg-white p-10 shadow-2xl duration-300">
+            <Button
+              variant="ghost"
+              onClick={() => setShowModal(false)}
+              className="focus:transparent absolute top-6 right-6 h-auto cursor-pointer p-0 text-slate-400 transition-colors hover:bg-transparent hover:text-slate-600"
+            >
+              <X size={20} />
+            </Button>
+
+            <div className="mb-8 text-center">
+              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-600">
+                <ShieldCheck size={32} strokeWidth={2.5} />
+              </div>
+              <Typography
+                variant="h2"
+                className="text-2xl font-black tracking-tighter text-slate-900 uppercase italic"
+              >
+                Área de{' '}
+                <Typography
+                  variant="small"
+                  className="text-3xl leading-5 font-black tracking-tighter text-emerald-600 uppercase italic"
+                >
+                  Usuarios
+                </Typography>
+              </Typography>
+              {pendingBets.length > 0 ? (
+                <div className="mt-3 rounded-xl bg-slate-50 p-3">
+                  <Typography
+                    variant="body"
+                    className="text-[12px] leading-tight font-bold text-slate-500 uppercase"
+                  >
+                    Inicia sesión para finalizar tu apuesta en:
+                    <Typography
+                      variant="small"
+                      className="mt-1 block text-[12px] text-slate-800 italic"
+                    >
+                      {pendingBets.length} selección(es) activa(s)
+                    </Typography>
+                  </Typography>
+                </div>
+              ) : (
+                <Typography
+                  variant="body"
+                  className="mt-2 text-sm font-medium text-slate-400"
+                >
+                  Accede a tu panel de apuestas
+                </Typography>
+              )}
+            </div>
+
+            <form onSubmit={handleModalLogin} noValidate className="space-y-4">
+              <Input
                 name="username"
-                placeholder="testuser"
-                className="mb-4 w-full rounded-lg border border-white/5 bg-zinc-800 p-3 outline-none focus:border-green-500"
+                placeholder="Tu nombre de usuario"
+                required
+                icon={User}
               />
-              <input
+              <Input
                 name="password"
                 type="password"
-                placeholder="password"
-                className="mb-6 w-full rounded-lg border border-white/5 bg-zinc-800 p-3 outline-none focus:border-green-500"
+                placeholder="Contraseña"
+                required
+                icon={LockKeyhole}
               />
-              <button
+              <Button
+                variant="dark"
                 type="submit"
-                className="mb-6 w-full cursor-pointer rounded-lg bg-green-600 p-3 font-bold transition-colors hover:bg-green-500"
+                className="mt-3 w-full cursor-pointer rounded-2xl bg-slate-900 p-4 text-sm font-black tracking-widest text-white uppercase transition-all hover:bg-slate-800 hover:shadow-xl active:scale-95"
               >
-                Entrar y Apostar
-              </button>
-              <button
+                Entrar ahora
+              </Button>
+              <Button
+                variant="ghost"
                 type="button"
-                onClick={() => {
-                  setShowModal(false);
-                }}
-                className="w-full cursor-pointer text-sm text-zinc-500"
+                onClick={() => setShowModal(false)}
+                className="h-auto w-full cursor-pointer p-0 pt-2 text-xs font-bold tracking-tighter text-slate-400 uppercase transition-colors hover:bg-transparent hover:text-slate-600 focus:bg-transparent"
               >
-                Cancelar
-              </button>
+                Continuar como invitado
+              </Button>
             </form>
           </div>
         </div>

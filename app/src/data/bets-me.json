@@ -158,7 +158,7 @@
       "odd": 5.75,
       "stake": 20,
       "status": "WON",
-      "return": 115.0
+      "return": 115
     },
     {
       "id": "bet_017",
@@ -475,7 +475,7 @@
       "matchId": "match_034",
       "placedAt": "2026-02-12T16:21:00-05:00",
       "pick": "HOME",
-      "odd": 5.0,
+      "odd": 5,
       "stake": 50,
       "status": "PENDING",
       "return": null
@@ -499,6 +499,106 @@
       "stake": 15,
       "status": "WON",
       "return": 51.75
+    },
+    {
+      "id": "bet_051",
+      "matchId": "match_unknown",
+      "placedAt": "2026-02-20T02:06:59.361Z",
+      "pick": "Visita",
+      "odd": 5.35,
+      "stake": 0,
+      "status": "PENDING",
+      "return": null
+    },
+    {
+      "id": "bet_052",
+      "matchId": "match_unknown",
+      "placedAt": "2026-02-20T02:11:30.885Z",
+      "pick": "Empate",
+      "odd": 4.34,
+      "stake": 0,
+      "status": "PENDING",
+      "return": null
+    },
+    {
+      "id": "bet_053",
+      "matchId": "match_unknown",
+      "placedAt": "2026-02-20T02:22:46.950Z",
+      "pick": "Visita",
+      "odd": 5.96,
+      "stake": 10,
+      "status": "PENDING",
+      "return": null
+    },
+    {
+      "id": "bet_054",
+      "matchId": "match_unknown",
+      "placedAt": "2026-02-20T03:31:14.923Z",
+      "pick": "Empate",
+      "odd": 4.34,
+      "stake": 0,
+      "status": "PENDING",
+      "return": null
+    },
+    {
+      "id": "bet_055",
+      "matchId": "match_unknown",
+      "placedAt": "2026-02-20T03:31:25.681Z",
+      "pick": "Local",
+      "odd": 4.67,
+      "stake": 0,
+      "status": "PENDING",
+      "return": null
+    },
+    {
+      "id": "bet_056",
+      "matchId": "match_unknown",
+      "placedAt": "2026-02-20T03:36:27.470Z",
+      "pick": "Empate",
+      "odd": 2.93,
+      "stake": 0,
+      "status": "PENDING",
+      "return": null
+    },
+    {
+      "id": "bet_057",
+      "matchId": "match_unknown",
+      "placedAt": "2026-02-20T03:58:27.996Z",
+      "pick": "Visita",
+      "odd": 5.35,
+      "stake": 0,
+      "status": "PENDING",
+      "return": null
+    },
+    {
+      "id": "bet_058",
+      "matchId": "match_unknown",
+      "placedAt": "2026-02-20T04:04:36.578Z",
+      "pick": "Empate",
+      "odd": 4.34,
+      "stake": 3,
+      "status": "PENDING",
+      "return": null
+    },
+    {
+      "id": "bet_059",
+      "matchId": "match_unknown",
+      "placedAt": "2026-02-20T04:34:35.575Z",
+      "pick": "Empate",
+      "odd": 4.34,
+      "stake": 15,
+      "status": "PENDING",
+      "return": null
+    },
+    {
+      "id": "bet_060",
+      "matchId": "match_unknown",
+      "placedAt": "2026-02-20T05:46:17.339Z",
+      "pick": "Local",
+      "odd": 1.63,
+      "stake": 15,
+      "status": "PENDING",
+      "return": null
     }
   ]
 }

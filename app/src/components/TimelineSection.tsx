@@ -1,90 +1,150 @@
 'use client';
 
-import { useSetAtom } from 'jotai';
-import { useSession } from 'next-auth/react';
-import { toast } from 'sonner';
-import { loginModalAtom, pendingBetAtom } from '../store/globals';
-import type { GroupedMatch, Match } from '../types';
+import { Typography } from '@betday-lite/typography';
+import { useAtom } from 'jotai';
+import { useMemo, useState } from 'react';
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import { FreeMode, Mousewheel } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { type Match } from '../interfaces';
+import { pendingBetsAtom } from '../store/globals';
 
-export default function TimelineSection({
-  matches
-}: {
-  matches: GroupedMatch[];
-}) {
-  const { data: session } = useSession();
-  const setPendingBet = useSetAtom(pendingBetAtom);
-  const setShowModal = useSetAtom(loginModalAtom);
+interface HourGroup {
+  hour: string;
+  matches: Match[];
+}
+
+interface DayGroup {
+  date: string;
+  hours: HourGroup[];
+}
+
+export default function TimelineSection({ matches }: { matches: DayGroup[] }) {
+  const [pendingBets, setPendingBets] = useAtom(pendingBetsAtom);
+  const [selectedDate] = useState(matches[0]?.date);
+
+  const allMatchesOfDay = useMemo(() => {
+    const day = matches.find((d) => d.date === selectedDate);
+    if (!day) return [];
+
+    return day.hours.flatMap((hg: HourGroup) =>
+      hg.matches.map((m: Match) => ({ ...m, displayHour: hg.hour }))
+    );
+  }, [selectedDate, matches]);
 
   const handleBetClick = (match: Match, pick: string, odd: number) => {
-    if (!session) {
-      setPendingBet({ match, pick, odd });
-      setShowModal(true);
-      return;
-    }
+    setPendingBets((prev) => {
+      const otherMatches = prev.filter((b) => b.match.id !== match.id);
+      const isReclickingSamePick = prev.find(
+        (b) => b.match.id === match.id && b.pick === pick
+      );
 
-    toast.success(
-      `Apuesta realizada en ${match.homeTeam.shortName} vs ${match.awayTeam.shortName}`
-    );
+      if (isReclickingSamePick) return otherMatches;
+
+      return [...otherMatches, { match, pick, odd }];
+    });
   };
 
+  const isSelected = (matchId: string, pick: string) =>
+    pendingBets.some((bet) => bet.match.id === matchId && bet.pick === pick);
+
   return (
-    <div className="space-y-4">
-      {matches.map((match) => (
-        <div
-          key={match.match.id}
-          className="rounded-xl border border-white/5 bg-zinc-900 p-4"
+    <div className="w-full space-y-8 overflow-hidden">
+      <div className="relative">
+        <Swiper
+          modules={[FreeMode, Mousewheel]}
+          freeMode={true}
+          mousewheel={{ forceToAxis: true }}
+          slidesPerView="auto"
+          spaceBetween={16}
+          className="w-full overflow-visible! px-4"
         >
-          <p className="mb-2 text-xs text-zinc-500">
-            {new Date(match.match.startTime).toLocaleTimeString()}
-          </p>
-          <div className="flex items-center justify-between">
-            <span className="font-bold">
-              {match.match.homeTeam.shortName} vs{' '}
-              {match.match.awayTeam.shortName}
-            </span>
-            <div className="flex gap-2">
-              <button
-                onClick={() =>
-                  handleBetClick(
-                    match.match,
-                    'HOME',
-                    match.match.market.odds.home
-                  )
-                }
-                className="min-w-15 cursor-pointer rounded bg-zinc-800 p-2 text-sm font-semibold hover:bg-zinc-700"
+          {allMatchesOfDay.map((m: Match) => {
+            return (
+              <SwiperSlide
+                key={m.id}
+                style={{ width: '360px' }}
+                className="w-[85vw]! pb-4 sm:w-90!"
               >
-                {match.match.market.odds.home}
-              </button>
+                <div className="space-y-3">
+                  <div className="group flex h-50 flex-col rounded-4xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:border-emerald-200 hover:shadow-md">
+                    <div className="mb-4 flex items-center justify-between">
+                      <Typography
+                        variant="small"
+                        className="truncate rounded-lg bg-slate-100 px-3 py-1 text-[10px] font-bold tracking-tight text-slate-500 uppercase"
+                      >
+                        {m.league.name}
+                      </Typography>
+                      <div className="flex items-center gap-1.5">
+                        <Typography
+                          variant="small"
+                          className="font-mono text-[10px] font-bold text-slate-400"
+                        >
+                          {m.displayHour}
+                        </Typography>
+                        <div className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
+                      </div>
+                    </div>
 
-              <button
-                onClick={() =>
-                  handleBetClick(
-                    match.match,
-                    'DRAW',
-                    match.match.market.odds.draw
-                  )
-                }
-                className="min-w-15 cursor-pointer rounded bg-zinc-800 p-2 text-sm font-semibold hover:bg-zinc-700"
-              >
-                {match.match.market.odds.draw}
-              </button>
+                    <div className="mb-5">
+                      <Typography
+                        variant="h3"
+                        className="text-lg leading-tight font-black tracking-tighter text-slate-900 uppercase italic"
+                      >
+                        {m.homeTeam.name} <br />
+                        <Typography
+                          variant="small"
+                          className="mx-1 text-sm font-medium text-slate-300 not-italic"
+                        >
+                          vs
+                        </Typography>
+                        {m.awayTeam.name}
+                      </Typography>
+                    </div>
 
-              <button
-                onClick={() =>
-                  handleBetClick(
-                    match.match,
-                    'AWAY',
-                    match.match.market.odds.away
-                  )
-                }
-                className="min-w-15 cursor-pointer rounded bg-zinc-800 p-2 text-sm font-semibold hover:bg-zinc-700"
-              >
-                {match.match.market.odds.away}
-              </button>
-            </div>
-          </div>
-        </div>
-      ))}
+                    <div className="mt-auto grid grid-cols-3 gap-2">
+                      {[
+                        { label: 'Local', val: m.market.odds.home },
+                        { label: 'Empate', val: m.market.odds.draw },
+                        { label: 'Visita', val: m.market.odds.away }
+                      ].map((odd) => {
+                        const active = isSelected(m.id, odd.label);
+                        return (
+                          <button
+                            key={odd.label}
+                            onClick={() =>
+                              handleBetClick(m, odd.label, odd.val)
+                            }
+                            className={`group relative flex flex-col items-center rounded-2xl py-2.5 transition-all duration-200 ${
+                              active
+                                ? 'bg-slate-900 text-white shadow-lg ring-2 ring-slate-900 ring-offset-2'
+                                : 'border border-transparent bg-slate-50 text-slate-900 hover:border-emerald-200 hover:bg-emerald-50 hover:text-emerald-700'
+                            }`}
+                          >
+                            <Typography
+                              variant="small"
+                              className={`text-[10px] font-bold uppercase ${active ? 'text-slate-400' : 'text-slate-400'}`}
+                            >
+                              {odd.label}
+                            </Typography>
+                            <Typography
+                              variant="small"
+                              className="text-md font-mono font-black"
+                            >
+                              {odd.val.toFixed(2)}
+                            </Typography>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
     </div>
   );
 }

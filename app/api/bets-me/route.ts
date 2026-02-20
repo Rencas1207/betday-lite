@@ -1,6 +1,6 @@
 import betsData from '@/app/src/data/bets-me.json';
 import { authOptions } from '@/app/src/lib/auth';
-import { getServerSession } from 'next-auth';
+import { getServerSession } from 'next-auth/next';
 import { NextResponse } from 'next/server';
 
 export async function GET() {

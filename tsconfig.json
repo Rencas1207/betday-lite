@@ -18,7 +18,12 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
+      "@betday-lite/typography": ["./stories/typography"],
+      "@betday-lite/button": ["./stories/button"],
+      "@betday-lite/input": ["./stories/input"],
+      "@betday-lite/tailwind-utils": ["./stories/tailwind-utils"],
       "@/*": ["./*"]
     }
   },
