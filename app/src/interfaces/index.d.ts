@@ -27,12 +27,13 @@ export interface Match {
   league: {
     id: string;
     name: string;
-    logo: string;
+    country: string;
   };
   homeTeam: Team;
   awayTeam: Team;
   startTime: string;
   market: Market;
+  displayHour: string;
 }
 
 export interface MatchesTodayResponse {
@@ -47,26 +48,12 @@ export interface MatchesApiResponse {
 }
 
 export interface GroupedMatch {
-  datetime: string;
-  match: Match;
+  hour: string;
+  matches: Match[];
 }
 
 export type BetStatus = 'PENDING' | 'WON' | 'LOST';
 export type BetPick = 'HOME' | 'DRAW' | 'AWAY';
-
-export interface Bet {
-  id: string;
-  matchId: string;
-  leagueName: string;
-  homeTeamName: string;
-  awayTeamName: string;
-  pick: BetPick;
-  oddValue: number;
-  stake: number;
-  return: number;
-  status: BetStatus;
-  betTime: string; // ISO 8601 string
-}
 
 export interface UserBetsResponse {
   total: number;
