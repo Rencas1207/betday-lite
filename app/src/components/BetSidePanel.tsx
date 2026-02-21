@@ -196,7 +196,7 @@ export default function BetSlip() {
                   ))}
                 </Box>
 
-                <Box className="mt-auto space-y-4 rounded-b-2xl border-t border-slate-100 bg-white p-6">
+                <Box className="mt-auto space-y-4 rounded-b-3xl border-t border-slate-100 bg-white p-6">
                   {activeTab === 'multiples' ? (
                     <Box className="space-y-4">
                       <Box className="flex items-center justify-between rounded-2xl bg-emerald-50 px-4 py-3">
