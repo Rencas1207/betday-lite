@@ -1,18 +1,11 @@
 @import 'tailwindcss';
 
 :root {
-  /* Fondo general: Un blanco "hielo" que no brilla tanto */
   --background: #f1f5f9;
   --foreground: #0f172a;
-
-  /* Header y Sidebars: Negro profundo para dar contraste */
   --nav-background: #0f172a;
   --nav-foreground: #ffffff;
-
-  /* Acento: El verde de las cuotas */
   --primary: #10b981;
-
-  /* Tarjetas y Contenedores: Blanco puro para que resalten sobre el fondo gris */
   --card: #ffffff;
   --card-border: #e2e8f0;
 }
@@ -31,4 +24,9 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-roboto);
+}
+
+.swiper-slide {
+  flex-shrink: 0 !important;
+  margin-right: 16px;
 }

@@ -23,6 +23,7 @@
       "@betday-lite/typography": ["./stories/typography"],
       "@betday-lite/button": ["./stories/button"],
       "@betday-lite/input": ["./stories/input"],
+      "@betday-lite/box": ["./stories/box"],
       "@betday-lite/tailwind-utils": ["./stories/tailwind-utils"],
       "@/*": ["./*"]
     }

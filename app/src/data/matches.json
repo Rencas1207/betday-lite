@@ -1351,6 +1351,1626 @@
           "away": 5.21
         }
       }
+    },
+    {
+      "id": "es_01",
+      "startTime": "2026-02-12T13:00:00-05:00",
+      "league": {
+        "id": "laliga",
+        "name": "La Liga",
+        "country": "Spain"
+      },
+      "homeTeam": {
+        "id": "rma",
+        "name": "Real Madrid",
+        "shortName": "RMA"
+      },
+      "awayTeam": {
+        "id": "vlr",
+        "name": "Villarreal",
+        "shortName": "VLR"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 1.45,
+          "draw": 4.82,
+          "away": 6.7
+        }
+      }
+    },
+    {
+      "id": "es_02",
+      "startTime": "2026-02-12T15:00:00-05:00",
+      "league": {
+        "id": "laliga",
+        "name": "La Liga",
+        "country": "Spain"
+      },
+      "homeTeam": {
+        "id": "bar",
+        "name": "Barcelona",
+        "shortName": "BAR"
+      },
+      "awayTeam": {
+        "id": "atm",
+        "name": "Atlético Madrid",
+        "shortName": "ATM"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.05,
+          "draw": 3.45,
+          "away": 3.6
+        }
+      }
+    },
+    {
+      "id": "es_03",
+      "startTime": "2026-02-12T11:00:00-05:00",
+      "league": {
+        "id": "laliga",
+        "name": "La Liga",
+        "country": "Spain"
+      },
+      "homeTeam": {
+        "id": "rso",
+        "name": "Real Sociedad",
+        "shortName": "RSO"
+      },
+      "awayTeam": {
+        "id": "ath",
+        "name": "Athletic Club",
+        "shortName": "ATH"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.3,
+          "draw": 3.1,
+          "away": 3.35
+        }
+      }
+    },
+    {
+      "id": "es_04",
+      "startTime": "2026-02-12T08:00:00-05:00",
+      "league": {
+        "id": "laliga",
+        "name": "La Liga",
+        "country": "Spain"
+      },
+      "homeTeam": {
+        "id": "sev",
+        "name": "Sevilla",
+        "shortName": "SEV"
+      },
+      "awayTeam": {
+        "id": "bet",
+        "name": "Real Betis",
+        "shortName": "BET"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.55,
+          "draw": 3.2,
+          "away": 2.9
+        }
+      }
+    },
+    {
+      "id": "es_05",
+      "startTime": "2026-02-12T14:00:00-05:00",
+      "league": {
+        "id": "laliga",
+        "name": "La Liga",
+        "country": "Spain"
+      },
+      "homeTeam": {
+        "id": "val",
+        "name": "Valencia",
+        "shortName": "VAL"
+      },
+      "awayTeam": {
+        "id": "gir",
+        "name": "Girona",
+        "shortName": "GIR"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.8,
+          "draw": 3.3,
+          "away": 2.55
+        }
+      }
+    },
+    {
+      "id": "es_06",
+      "startTime": "2026-02-12T10:00:00-05:00",
+      "league": {
+        "id": "laliga",
+        "name": "La Liga",
+        "country": "Spain"
+      },
+      "homeTeam": {
+        "id": "osa",
+        "name": "Osasuna",
+        "shortName": "OSA"
+      },
+      "awayTeam": {
+        "id": "cel",
+        "name": "Celta de Vigo",
+        "shortName": "CEL"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.15,
+          "draw": 3.25,
+          "away": 3.6
+        }
+      }
+    },
+    {
+      "id": "es_07",
+      "startTime": "2026-02-12T12:30:00-05:00",
+      "league": {
+        "id": "laliga",
+        "name": "La Liga",
+        "country": "Spain"
+      },
+      "homeTeam": {
+        "id": "ray",
+        "name": "Rayo Vallecano",
+        "shortName": "RAY"
+      },
+      "awayTeam": {
+        "id": "get",
+        "name": "Getafe",
+        "shortName": "GET"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.45,
+          "draw": 2.85,
+          "away": 3.4
+        }
+      }
+    },
+    {
+      "id": "es_08",
+      "startTime": "2026-02-12T09:00:00-05:00",
+      "league": {
+        "id": "laliga",
+        "name": "La Liga",
+        "country": "Spain"
+      },
+      "homeTeam": {
+        "id": "mall",
+        "name": "Mallorca",
+        "shortName": "MAL"
+      },
+      "awayTeam": {
+        "id": "ala",
+        "name": "Alavés",
+        "shortName": "ALA"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.0,
+          "draw": 3.1,
+          "away": 4.5
+        }
+      }
+    },
+    {
+      "id": "es_09",
+      "startTime": "2026-02-12T16:00:00-05:00",
+      "league": {
+        "id": "laliga",
+        "name": "La Liga",
+        "country": "Spain"
+      },
+      "homeTeam": {
+        "id": "lpa",
+        "name": "Las Palmas",
+        "shortName": "LPA"
+      },
+      "awayTeam": {
+        "id": "leg",
+        "name": "Leganés",
+        "shortName": "LEG"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.2,
+          "draw": 3.15,
+          "away": 3.55
+        }
+      }
+    },
+    {
+      "id": "es_10",
+      "startTime": "2026-02-12T07:00:00-05:00",
+      "league": {
+        "id": "laliga",
+        "name": "La Liga",
+        "country": "Spain"
+      },
+      "homeTeam": {
+        "id": "vld",
+        "name": "Valladolid",
+        "shortName": "VLD"
+      },
+      "awayTeam": {
+        "id": "esp",
+        "name": "Espanyol",
+        "shortName": "ESP"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.65,
+          "draw": 3.1,
+          "away": 2.85
+        }
+      }
+    },
+    {
+      "id": "es_11",
+      "startTime": "2026-02-12T13:30:00-05:00",
+      "league": {
+        "id": "laliga",
+        "name": "La Liga",
+        "country": "Spain"
+      },
+      "homeTeam": {
+        "id": "rma",
+        "name": "Real Madrid",
+        "shortName": "RMA"
+      },
+      "awayTeam": {
+        "id": "osa",
+        "name": "Osasuna",
+        "shortName": "OSA"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 1.25,
+          "draw": 6.1,
+          "away": 11.0
+        }
+      }
+    },
+    {
+      "id": "es_12",
+      "startTime": "2026-02-12T14:45:00-05:00",
+      "league": {
+        "id": "laliga",
+        "name": "La Liga",
+        "country": "Spain"
+      },
+      "homeTeam": {
+        "id": "bar",
+        "name": "Barcelona",
+        "shortName": "BAR"
+      },
+      "awayTeam": {
+        "id": "val",
+        "name": "Valencia",
+        "shortName": "VAL"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 1.35,
+          "draw": 5.4,
+          "away": 8.5
+        }
+      }
+    },
+    {
+      "id": "es_13",
+      "startTime": "2026-02-12T11:45:00-05:00",
+      "league": {
+        "id": "laliga",
+        "name": "La Liga",
+        "country": "Spain"
+      },
+      "homeTeam": {
+        "id": "atm",
+        "name": "Atlético Madrid",
+        "shortName": "ATM"
+      },
+      "awayTeam": {
+        "id": "sev",
+        "name": "Sevilla",
+        "shortName": "SEV"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 1.6,
+          "draw": 4.0,
+          "away": 5.8
+        }
+      }
+    },
+    {
+      "id": "es_14",
+      "startTime": "2026-02-12T12:00:00-05:00",
+      "league": {
+        "id": "laliga",
+        "name": "La Liga",
+        "country": "Spain"
+      },
+      "homeTeam": {
+        "id": "ath",
+        "name": "Athletic Club",
+        "shortName": "ATH"
+      },
+      "awayTeam": {
+        "id": "rso",
+        "name": "Real Sociedad",
+        "shortName": "RSO"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.1,
+          "draw": 3.2,
+          "away": 3.8
+        }
+      }
+    },
+    {
+      "id": "es_15",
+      "startTime": "2026-02-12T15:15:00-05:00",
+      "league": {
+        "id": "laliga",
+        "name": "La Liga",
+        "country": "Spain"
+      },
+      "homeTeam": {
+        "id": "bet",
+        "name": "Real Betis",
+        "shortName": "BET"
+      },
+      "awayTeam": {
+        "id": "vlr",
+        "name": "Villarreal",
+        "shortName": "VLR"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.4,
+          "draw": 3.5,
+          "away": 2.85
+        }
+      }
+    },
+    {
+      "id": "it_01",
+      "startTime": "2026-02-12T14:45:00-05:00",
+      "league": {
+        "id": "seriea",
+        "name": "Serie A",
+        "country": "Italy"
+      },
+      "homeTeam": {
+        "id": "int",
+        "name": "Inter Milan",
+        "shortName": "INT"
+      },
+      "awayTeam": {
+        "id": "juv",
+        "name": "Juventus",
+        "shortName": "JUV"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 1.9,
+          "draw": 3.4,
+          "away": 4.3
+        }
+      }
+    },
+    {
+      "id": "it_02",
+      "startTime": "2026-02-12T12:30:00-05:00",
+      "league": {
+        "id": "seriea",
+        "name": "Serie A",
+        "country": "Italy"
+      },
+      "homeTeam": {
+        "id": "mil",
+        "name": "AC Milan",
+        "shortName": "MIL"
+      },
+      "awayTeam": {
+        "id": "nap",
+        "name": "Napoli",
+        "shortName": "NAP"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.2,
+          "draw": 3.3,
+          "away": 3.45
+        }
+      }
+    },
+    {
+      "id": "it_03",
+      "startTime": "2026-02-12T09:00:00-05:00",
+      "league": {
+        "id": "seriea",
+        "name": "Serie A",
+        "country": "Italy"
+      },
+      "homeTeam": {
+        "id": "rom",
+        "name": "AS Roma",
+        "shortName": "ROM"
+      },
+      "awayTeam": {
+        "id": "laz",
+        "name": "Lazio",
+        "shortName": "LAZ"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.4,
+          "draw": 3.15,
+          "away": 3.2
+        }
+      }
+    },
+    {
+      "id": "it_04",
+      "startTime": "2026-02-12T11:30:00-05:00",
+      "league": {
+        "id": "seriea",
+        "name": "Serie A",
+        "country": "Italy"
+      },
+      "homeTeam": {
+        "id": "ata",
+        "name": "Atalanta",
+        "shortName": "ATA"
+      },
+      "awayTeam": {
+        "id": "fio",
+        "name": "Fiorentina",
+        "shortName": "FIO"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 1.85,
+          "draw": 3.7,
+          "away": 4.2
+        }
+      }
+    },
+    {
+      "id": "it_05",
+      "startTime": "2026-02-12T14:00:00-05:00",
+      "league": {
+        "id": "seriea",
+        "name": "Serie A",
+        "country": "Italy"
+      },
+      "homeTeam": {
+        "id": "bol",
+        "name": "Bologna",
+        "shortName": "BOL"
+      },
+      "awayTeam": {
+        "id": "tor",
+        "name": "Torino",
+        "shortName": "TOR"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.1,
+          "draw": 3.0,
+          "away": 3.9
+        }
+      }
+    },
+    {
+      "id": "it_06",
+      "startTime": "2026-02-12T06:30:00-05:00",
+      "league": {
+        "id": "seriea",
+        "name": "Serie A",
+        "country": "Italy"
+      },
+      "homeTeam": {
+        "id": "udn",
+        "name": "Udinese",
+        "shortName": "UDN"
+      },
+      "awayTeam": {
+        "id": "emp",
+        "name": "Empoli",
+        "shortName": "EMP"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.05,
+          "draw": 3.2,
+          "away": 4.1
+        }
+      }
+    },
+    {
+      "id": "it_07",
+      "startTime": "2026-02-12T12:00:00-05:00",
+      "league": {
+        "id": "seriea",
+        "name": "Serie A",
+        "country": "Italy"
+      },
+      "homeTeam": {
+        "id": "ver",
+        "name": "Verona",
+        "shortName": "VER"
+      },
+      "awayTeam": {
+        "id": "mon",
+        "name": "Monza",
+        "shortName": "MON"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.5,
+          "draw": 3.1,
+          "away": 3.05
+        }
+      }
+    },
+    {
+      "id": "it_08",
+      "startTime": "2026-02-12T15:00:00-05:00",
+      "league": {
+        "id": "seriea",
+        "name": "Serie A",
+        "country": "Italy"
+      },
+      "homeTeam": {
+        "id": "cag",
+        "name": "Cagliari",
+        "shortName": "CAG"
+      },
+      "awayTeam": {
+        "id": "gen",
+        "name": "Genoa",
+        "shortName": "GEN"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.35,
+          "draw": 3.2,
+          "away": 3.2
+        }
+      }
+    },
+    {
+      "id": "it_09",
+      "startTime": "2026-02-12T10:45:00-05:00",
+      "league": {
+        "id": "seriea",
+        "name": "Serie A",
+        "country": "Italy"
+      },
+      "homeTeam": {
+        "id": "lec",
+        "name": "Lecce",
+        "shortName": "LEC"
+      },
+      "awayTeam": {
+        "id": "par",
+        "name": "Parma",
+        "shortName": "PAR"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.4,
+          "draw": 3.25,
+          "away": 3.15
+        }
+      }
+    },
+    {
+      "id": "it_10",
+      "startTime": "2026-02-12T11:00:00-05:00",
+      "league": {
+        "id": "seriea",
+        "name": "Serie A",
+        "country": "Italy"
+      },
+      "homeTeam": {
+        "id": "ven",
+        "name": "Venezia",
+        "shortName": "VEN"
+      },
+      "awayTeam": {
+        "id": "com",
+        "name": "Como",
+        "shortName": "COM"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.75,
+          "draw": 3.2,
+          "away": 2.7
+        }
+      }
+    },
+    {
+      "id": "it_11",
+      "startTime": "2026-02-12T13:00:00-05:00",
+      "league": {
+        "id": "seriea",
+        "name": "Serie A",
+        "country": "Italy"
+      },
+      "homeTeam": {
+        "id": "int",
+        "name": "Inter Milan",
+        "shortName": "INT"
+      },
+      "awayTeam": {
+        "id": "ata",
+        "name": "Atalanta",
+        "shortName": "ATA"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 1.7,
+          "draw": 3.9,
+          "away": 5.2
+        }
+      }
+    },
+    {
+      "id": "it_12",
+      "startTime": "2026-02-12T15:45:00-05:00",
+      "league": {
+        "id": "seriea",
+        "name": "Serie A",
+        "country": "Italy"
+      },
+      "homeTeam": {
+        "id": "juv",
+        "name": "Juventus",
+        "shortName": "JUV"
+      },
+      "awayTeam": {
+        "id": "mil",
+        "name": "AC Milan",
+        "shortName": "MIL"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.15,
+          "draw": 3.25,
+          "away": 3.65
+        }
+      }
+    },
+    {
+      "id": "it_13",
+      "startTime": "2026-02-12T14:30:00-05:00",
+      "league": {
+        "id": "seriea",
+        "name": "Serie A",
+        "country": "Italy"
+      },
+      "homeTeam": {
+        "id": "nap",
+        "name": "Napoli",
+        "shortName": "NAP"
+      },
+      "awayTeam": {
+        "id": "rom",
+        "name": "AS Roma",
+        "shortName": "ROM"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 1.95,
+          "draw": 3.4,
+          "away": 4.1
+        }
+      }
+    },
+    {
+      "id": "it_14",
+      "startTime": "2026-02-12T08:30:00-05:00",
+      "league": {
+        "id": "seriea",
+        "name": "Serie A",
+        "country": "Italy"
+      },
+      "homeTeam": {
+        "id": "laz",
+        "name": "Lazio",
+        "shortName": "LAZ"
+      },
+      "awayTeam": {
+        "id": "fio",
+        "name": "Fiorentina",
+        "shortName": "FIO"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.25,
+          "draw": 3.3,
+          "away": 3.3
+        }
+      }
+    },
+    {
+      "id": "it_15",
+      "startTime": "2026-02-12T11:15:00-05:00",
+      "league": {
+        "id": "seriea",
+        "name": "Serie A",
+        "country": "Italy"
+      },
+      "homeTeam": {
+        "id": "tor",
+        "name": "Torino",
+        "shortName": "TOR"
+      },
+      "awayTeam": {
+        "id": "udn",
+        "name": "Udinese",
+        "shortName": "UDN"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.1,
+          "draw": 3.1,
+          "away": 3.95
+        }
+      }
+    },
+    {
+      "id": "pe_01",
+      "startTime": "2026-02-12T15:00:00-05:00",
+      "league": {
+        "id": "liga1",
+        "name": "Liga 1",
+        "country": "Peru"
+      },
+      "homeTeam": {
+        "id": "uni",
+        "name": "Universitario",
+        "shortName": "UNI"
+      },
+      "awayTeam": {
+        "id": "ali",
+        "name": "Alianza Lima",
+        "shortName": "ALI"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.15,
+          "draw": 3.2,
+          "away": 3.4
+        }
+      }
+    },
+    {
+      "id": "pe_02",
+      "startTime": "2026-02-12T19:00:00-05:00",
+      "league": {
+        "id": "liga1",
+        "name": "Liga 1",
+        "country": "Peru"
+      },
+      "homeTeam": {
+        "id": "scr",
+        "name": "Sporting Cristal",
+        "shortName": "SCR"
+      },
+      "awayTeam": {
+        "id": "mel",
+        "name": "FBC Melgar",
+        "shortName": "MEL"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 1.9,
+          "draw": 3.5,
+          "away": 4.2
+        }
+      }
+    },
+    {
+      "id": "pe_03",
+      "startTime": "2026-02-12T13:00:00-05:00",
+      "league": {
+        "id": "liga1",
+        "name": "Liga 1",
+        "country": "Peru"
+      },
+      "homeTeam": {
+        "id": "cie",
+        "name": "Cienciano",
+        "shortName": "CIE"
+      },
+      "awayTeam": {
+        "id": "cus",
+        "name": "Cusco FC",
+        "shortName": "CUS"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 1.75,
+          "draw": 3.6,
+          "away": 4.8
+        }
+      }
+    },
+    {
+      "id": "pe_04",
+      "startTime": "2026-02-12T15:30:00-05:00",
+      "league": {
+        "id": "liga1",
+        "name": "Liga 1",
+        "country": "Peru"
+      },
+      "homeTeam": {
+        "id": "adi",
+        "name": "ADT Tarma",
+        "shortName": "ADT"
+      },
+      "awayTeam": {
+        "id": "val",
+        "name": "César Vallejo",
+        "shortName": "UCV"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 1.65,
+          "draw": 3.8,
+          "away": 5.5
+        }
+      }
+    },
+    {
+      "id": "pe_05",
+      "startTime": "2026-02-12T17:15:00-05:00",
+      "league": {
+        "id": "liga1",
+        "name": "Liga 1",
+        "country": "Peru"
+      },
+      "homeTeam": {
+        "id": "utc",
+        "name": "UTC",
+        "shortName": "UTC"
+      },
+      "awayTeam": {
+        "id": "man",
+        "name": "Carlos Mannucci",
+        "shortName": "MAN"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.0,
+          "draw": 3.25,
+          "away": 3.9
+        }
+      }
+    },
+    {
+      "id": "pe_06",
+      "startTime": "2026-02-12T13:45:00-05:00",
+      "league": {
+        "id": "liga1",
+        "name": "Liga 1",
+        "country": "Peru"
+      },
+      "homeTeam": {
+        "id": "gra",
+        "name": "Atlético Grau",
+        "shortName": "GRA"
+      },
+      "awayTeam": {
+        "id": "sul",
+        "name": "Alianza Atlético",
+        "shortName": "AAS"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 1.85,
+          "draw": 3.4,
+          "away": 4.5
+        }
+      }
+    },
+    {
+      "id": "pe_07",
+      "startTime": "2026-02-12T20:00:00-05:00",
+      "league": {
+        "id": "liga1",
+        "name": "Liga 1",
+        "country": "Peru"
+      },
+      "homeTeam": {
+        "id": "boy",
+        "name": "Sport Boys",
+        "shortName": "SBA"
+      },
+      "awayTeam": {
+        "id": "gar",
+        "name": "Deportivo Garcilaso",
+        "shortName": "GAR"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.2,
+          "draw": 3.15,
+          "away": 3.4
+        }
+      }
+    },
+    {
+      "id": "pe_08",
+      "startTime": "2026-02-12T15:00:00-05:00",
+      "league": {
+        "id": "liga1",
+        "name": "Liga 1",
+        "country": "Peru"
+      },
+      "homeTeam": {
+        "id": "com",
+        "name": "Comerciantes Unidos",
+        "shortName": "COM"
+      },
+      "awayTeam": {
+        "id": "tar",
+        "name": "Unión Comercio",
+        "shortName": "UCO"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 1.7,
+          "draw": 3.65,
+          "away": 5.2
+        }
+      }
+    },
+    {
+      "id": "pe_09",
+      "startTime": "2026-02-12T16:00:00-05:00",
+      "league": {
+        "id": "liga1",
+        "name": "Liga 1",
+        "country": "Peru"
+      },
+      "homeTeam": {
+        "id": "los",
+        "name": "Los Chankas",
+        "shortName": "CHA"
+      },
+      "awayTeam": {
+        "id": "uni",
+        "name": "Universitario",
+        "shortName": "UNI"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 3.8,
+          "draw": 3.4,
+          "away": 1.95
+        }
+      }
+    },
+    {
+      "id": "pe_10",
+      "startTime": "2026-02-12T18:00:00-05:00",
+      "league": {
+        "id": "liga1",
+        "name": "Liga 1",
+        "country": "Peru"
+      },
+      "homeTeam": {
+        "id": "ali",
+        "name": "Alianza Lima",
+        "shortName": "ALI"
+      },
+      "awayTeam": {
+        "id": "gra",
+        "name": "Atlético Grau",
+        "shortName": "GRA"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 1.4,
+          "draw": 4.5,
+          "away": 8.0
+        }
+      }
+    },
+    {
+      "id": "pe_11",
+      "startTime": "2026-02-12T14:30:00-05:00",
+      "league": {
+        "id": "liga1",
+        "name": "Liga 1",
+        "country": "Peru"
+      },
+      "homeTeam": {
+        "id": "mel",
+        "name": "FBC Melgar",
+        "shortName": "MEL"
+      },
+      "awayTeam": {
+        "id": "cie",
+        "name": "Cienciano",
+        "shortName": "CIE"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 1.55,
+          "draw": 4.0,
+          "away": 6.2
+        }
+      }
+    },
+    {
+      "id": "pe_12",
+      "startTime": "2026-02-12T12:00:00-05:00",
+      "league": {
+        "id": "liga1",
+        "name": "Liga 1",
+        "country": "Peru"
+      },
+      "homeTeam": {
+        "id": "cus",
+        "name": "Cusco FC",
+        "shortName": "CUS"
+      },
+      "awayTeam": {
+        "id": "scr",
+        "name": "Sporting Cristal",
+        "shortName": "SCR"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.5,
+          "draw": 3.3,
+          "away": 2.75
+        }
+      }
+    },
+    {
+      "id": "pe_13",
+      "startTime": "2026-02-12T11:00:00-05:00",
+      "league": {
+        "id": "liga1",
+        "name": "Liga 1",
+        "country": "Peru"
+      },
+      "homeTeam": {
+        "id": "val",
+        "name": "César Vallejo",
+        "shortName": "UCV"
+      },
+      "awayTeam": {
+        "id": "utc",
+        "name": "UTC",
+        "shortName": "UTC"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 1.8,
+          "draw": 3.5,
+          "away": 4.6
+        }
+      }
+    },
+    {
+      "id": "pe_14",
+      "startTime": "2026-02-12T15:00:00-05:00",
+      "league": {
+        "id": "liga1",
+        "name": "Liga 1",
+        "country": "Peru"
+      },
+      "homeTeam": {
+        "id": "man",
+        "name": "Carlos Mannucci",
+        "shortName": "MAN"
+      },
+      "awayTeam": {
+        "id": "boy",
+        "name": "Sport Boys",
+        "shortName": "SBA"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.1,
+          "draw": 3.2,
+          "away": 3.65
+        }
+      }
+    },
+    {
+      "id": "pe_15",
+      "startTime": "2026-02-12T17:30:00-05:00",
+      "league": {
+        "id": "liga1",
+        "name": "Liga 1",
+        "country": "Peru"
+      },
+      "homeTeam": {
+        "id": "sul",
+        "name": "Alianza Atlético",
+        "shortName": "AAS"
+      },
+      "awayTeam": {
+        "id": "adi",
+        "name": "ADT Tarma",
+        "shortName": "ADT"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.25,
+          "draw": 3.15,
+          "away": 3.35
+        }
+      }
+    },
+    {
+      "id": "de_01",
+      "startTime": "2026-02-12T12:30:00-05:00",
+      "league": {
+        "id": "bundesliga",
+        "name": "Bundesliga",
+        "country": "Germany"
+      },
+      "homeTeam": {
+        "id": "bay",
+        "name": "Bayern Munich",
+        "shortName": "BAY"
+      },
+      "awayTeam": {
+        "id": "bvb",
+        "name": "Dortmund",
+        "shortName": "BVB"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 1.6,
+          "draw": 4.5,
+          "away": 5.1
+        }
+      }
+    },
+    {
+      "id": "de_02",
+      "startTime": "2026-02-12T09:30:00-05:00",
+      "league": {
+        "id": "bundesliga",
+        "name": "Bundesliga",
+        "country": "Germany"
+      },
+      "homeTeam": {
+        "id": "lev",
+        "name": "Bayer Leverkusen",
+        "shortName": "LEV"
+      },
+      "awayTeam": {
+        "id": "rbl",
+        "name": "RB Leipzig",
+        "shortName": "RBL"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.15,
+          "draw": 3.6,
+          "away": 3.25
+        }
+      }
+    },
+    {
+      "id": "de_03",
+      "startTime": "2026-02-12T09:30:00-05:00",
+      "league": {
+        "id": "bundesliga",
+        "name": "Bundesliga",
+        "country": "Germany"
+      },
+      "homeTeam": {
+        "id": "stut",
+        "name": "Stuttgart",
+        "shortName": "STU"
+      },
+      "awayTeam": {
+        "id": "fra",
+        "name": "Eintracht Frankfurt",
+        "shortName": "SGE"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.0,
+          "draw": 3.75,
+          "away": 3.5
+        }
+      }
+    },
+    {
+      "id": "de_04",
+      "startTime": "2026-02-12T09:30:00-05:00",
+      "league": {
+        "id": "bundesliga",
+        "name": "Bundesliga",
+        "country": "Germany"
+      },
+      "homeTeam": {
+        "id": "wob",
+        "name": "Wolfsburg",
+        "shortName": "WOB"
+      },
+      "awayTeam": {
+        "id": "mon",
+        "name": "M'gladbach",
+        "shortName": "BMG"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.25,
+          "draw": 3.45,
+          "away": 3.1
+        }
+      }
+    },
+    {
+      "id": "de_05",
+      "startTime": "2026-02-12T09:30:00-05:00",
+      "league": {
+        "id": "bundesliga",
+        "name": "Bundesliga",
+        "country": "Germany"
+      },
+      "homeTeam": {
+        "id": "fre",
+        "name": "Freiburg",
+        "shortName": "SCF"
+      },
+      "awayTeam": {
+        "id": "union",
+        "name": "Union Berlin",
+        "shortName": "FCU"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 1.95,
+          "draw": 3.3,
+          "away": 4.1
+        }
+      }
+    },
+    {
+      "id": "de_06",
+      "startTime": "2026-02-12T12:30:00-05:00",
+      "league": {
+        "id": "bundesliga",
+        "name": "Bundesliga",
+        "country": "Germany"
+      },
+      "homeTeam": {
+        "id": "bre",
+        "name": "Werder Bremen",
+        "shortName": "SVW"
+      },
+      "awayTeam": {
+        "id": "aug",
+        "name": "Augsburg",
+        "shortName": "FCA"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.2,
+          "draw": 3.5,
+          "away": 3.2
+        }
+      }
+    },
+    {
+      "id": "de_07",
+      "startTime": "2026-02-12T09:30:00-05:00",
+      "league": {
+        "id": "bundesliga",
+        "name": "Bundesliga",
+        "country": "Germany"
+      },
+      "homeTeam": {
+        "id": "hof",
+        "name": "Hoffenheim",
+        "shortName": "TSG"
+      },
+      "awayTeam": {
+        "id": "mai",
+        "name": "Mainz 05",
+        "shortName": "M05"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.1,
+          "draw": 3.65,
+          "away": 3.3
+        }
+      }
+    },
+    {
+      "id": "de_08",
+      "startTime": "2026-02-12T14:30:00-05:00",
+      "league": {
+        "id": "bundesliga",
+        "name": "Bundesliga",
+        "country": "Germany"
+      },
+      "homeTeam": {
+        "id": "stpa",
+        "name": "St. Pauli",
+        "shortName": "STP"
+      },
+      "awayTeam": {
+        "id": "hol",
+        "name": "Holstein Kiel",
+        "shortName": "KSV"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.3,
+          "draw": 3.25,
+          "away": 3.2
+        }
+      }
+    },
+    {
+      "id": "de_09",
+      "startTime": "2026-02-12T11:30:00-05:00",
+      "league": {
+        "id": "bundesliga",
+        "name": "Bundesliga",
+        "country": "Germany"
+      },
+      "homeTeam": {
+        "id": "hei",
+        "name": "Heidenheim",
+        "shortName": "HDH"
+      },
+      "awayTeam": {
+        "id": "bay",
+        "name": "Bayern Munich",
+        "shortName": "BAY"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 7.5,
+          "draw": 5.2,
+          "away": 1.35
+        }
+      }
+    },
+    {
+      "id": "de_10",
+      "startTime": "2026-02-12T13:30:00-05:00",
+      "league": {
+        "id": "bundesliga",
+        "name": "Bundesliga",
+        "country": "Germany"
+      },
+      "homeTeam": {
+        "id": "bvb",
+        "name": "Dortmund",
+        "shortName": "BVB"
+      },
+      "awayTeam": {
+        "id": "lev",
+        "name": "Bayer Leverkusen",
+        "shortName": "LEV"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.45,
+          "draw": 3.7,
+          "away": 2.7
+        }
+      }
+    },
+    {
+      "id": "de_11",
+      "startTime": "2026-02-12T08:30:00-05:00",
+      "league": {
+        "id": "bundesliga",
+        "name": "Bundesliga",
+        "country": "Germany"
+      },
+      "homeTeam": {
+        "id": "rbl",
+        "name": "RB Leipzig",
+        "shortName": "RBL"
+      },
+      "awayTeam": {
+        "id": "stut",
+        "name": "Stuttgart",
+        "shortName": "STU"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 1.9,
+          "draw": 3.8,
+          "away": 3.85
+        }
+      }
+    },
+    {
+      "id": "de_12",
+      "startTime": "2026-02-12T10:30:00-05:00",
+      "league": {
+        "id": "bundesliga",
+        "name": "Bundesliga",
+        "country": "Germany"
+      },
+      "homeTeam": {
+        "id": "fra",
+        "name": "Eintracht Frankfurt",
+        "shortName": "SGE"
+      },
+      "awayTeam": {
+        "id": "union",
+        "name": "Union Berlin",
+        "shortName": "FCU"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 1.85,
+          "draw": 3.5,
+          "away": 4.5
+        }
+      }
+    },
+    {
+      "id": "de_13",
+      "startTime": "2026-02-12T12:00:00-05:00",
+      "league": {
+        "id": "bundesliga",
+        "name": "Bundesliga",
+        "country": "Germany"
+      },
+      "homeTeam": {
+        "id": "mon",
+        "name": "M'gladbach",
+        "shortName": "BMG"
+      },
+      "awayTeam": {
+        "id": "bre",
+        "name": "Werder Bremen",
+        "shortName": "SVW"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.05,
+          "draw": 3.6,
+          "away": 3.4
+        }
+      }
+    },
+    {
+      "id": "de_14",
+      "startTime": "2026-02-12T14:00:00-05:00",
+      "league": {
+        "id": "bundesliga",
+        "name": "Bundesliga",
+        "country": "Germany"
+      },
+      "homeTeam": {
+        "id": "aug",
+        "name": "Augsburg",
+        "shortName": "FCA"
+      },
+      "awayTeam": {
+        "id": "fre",
+        "name": "Freiburg",
+        "shortName": "SCF"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.6,
+          "draw": 3.4,
+          "away": 2.7
+        }
+      }
+    },
+    {
+      "id": "de_15",
+      "startTime": "2026-02-12T15:00:00-05:00",
+      "league": {
+        "id": "bundesliga",
+        "name": "Bundesliga",
+        "country": "Germany"
+      },
+      "homeTeam": {
+        "id": "mai",
+        "name": "Mainz 05",
+        "shortName": "M05"
+      },
+      "awayTeam": {
+        "id": "wob",
+        "name": "Wolfsburg",
+        "shortName": "WOB"
+      },
+      "market": {
+        "type": "1X2",
+        "odds": {
+          "home": 2.4,
+          "draw": 3.3,
+          "away": 3.0
+        }
+      }
     }
   ]
 }

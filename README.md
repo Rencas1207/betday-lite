@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 BetDay Lite - Reto Técnico
 
-## Getting Started
+Solución para el reto **BetDay Lite** enfocada en rendimiento móvil, SEO avanzado y arquitectura escalable utilizando **Next.js 16**.
 
-First, run the development server:
+## 💡 Decisiones y Valor Agregado
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Arquitectura de Componentes (Storybook)**: Implementé un sistema de diseño atómico aislado en **Storybook**. Esto permitió desarrollar y documentar componentes base (`Box`, `Typography`, `Ticket`) de forma independiente, asegurando consistencia visual y reutilización.
+- **SSR & SEO Dinámico**: Utilicé el App Router para manejar metadatos dinámicos, **Sitemap.xml** y **Robots.txt** generados al vuelo. Incluí datos estructurados (**JSON-LD**) para optimizar la indexación de perfiles y tickets de apuesta.
+- **Integración con Supabase**: Gestión eficiente del historial de apuestas y estados en tiempo real (Pending, Won, Lost).
+- **PWA Ready**: Configuración completa de manifiesto e iconografía para una experiencia nativa en Android e iOS.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tecnologías utilizadas
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: [Next.js 16](https://nextjs.org/) (Turbopack)
+- **Autenticación**: [NextAuth.js](https://next-auth.js.org/) (Credentials Provider)
+- **Base de Datos**: [Supabase](https://supabase.com/) (PostgreSQL)
+- **Estilos**: Tailwind CSS & Lucide Icons
+- **SEO & Metadatos**: Metadata API, JSON-LD estructurado, Sitemap dinámico y Robots.txt.
+- **Notificaciones**: Sonner
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📦 Instalación y Configuración
 
-To learn more about Next.js, take a look at the following resources:
+1.  **Clonar el repositorio:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    ```bash
+    git clone -b main git@github.com:Rencas1207/betday-lite.git
+    cd betday-lite
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2.  **Instalar dependencias:**
 
-## Deploy on Vercel
+    ```bash
+    pnpm install
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3.  **Variables de Entorno:**
+    Crea un archivo `.env.local` en la raíz y configura las siguientes claves:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+    ```env
+    # Base de Datos (Supabase)
+    NEXT_PUBLIC_SUPABASE_URL=tu_url_supabase
+    NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY=tu_key_anonima
+
+    # Autenticación
+    NEXTAUTH_SECRET=tu_secreto_para_tokens
+    NEXTAUTH_URL=http://localhost:3000
+
+    # SEO
+    NEXT_PUBLIC_BASE_URL=http://localhost:3000
+    ```
+
+4.  **Ejecutar en desarrollo:**
+    ```bash
+    pnpm dev
+    ```
+
+---
+
+## 🔑 Credenciales de Acceso (Prueba)
+
+| Usuario    | Contraseña       | Perfil                                    |
+| :--------- | :--------------- | :---------------------------------------- |
+| `user_01`  | `1234BetDayLite` | Cuenta con historial de apuestas activas. |
+| `new_user` | `1234BetDayLite` | Cuenta nueva sin apuestas registradas.    |
+
+---
+
+## 🎯 Características Implementadas
+
+- **Página Principal (/)**: Cartelera de partidos en tiempo real con sistema de selección de cuotas dinámico.
+- **Historial de Apuestas (/profile)**: Gestión de estados (PENDING, WON, LOST) mediante integración con Supabase y paginación optimizada.
+- **Comprobante Digital (/bets/[betId])**: Vista detallada de apuestas con diseño de ticket físico, incluyendo cuotas finales y premios potenciales.
+- **SEO Avanzado**:
+  - Generación automática de `sitemap.xml` mediante rutas dinámicas de Next.js.
+  - Implementación de **JSON-LD** para mejorar la indexación de la WebApp y los perfiles de usuario.
+  - Configuración completa de Favicons y Web Manifest para soporte PWA.
+- **Rendimiento**: Configurado con **Turbopack** para tiempos de compilación y respuesta ultra rápidos.
+
+---
+
+## 🚀 Despliegue en Producción
+
+La aplicación se encuentra desplegada y optimizada en **Vercel**:
+
+- **URL del Proyecto**: [https://betday-lite.vercel.app](https://betday-lite.vercel.app)
+- **Sitemap**: [https://betday-lite.vercel.app/sitemap.xml](https://betday-lite.vercel.app/sitemap.xml)
+- **Robots**: [https://betday-lite.vercel.app/robots.txt](https://betday-lite.vercel.app/robots.txt)
+
+---
