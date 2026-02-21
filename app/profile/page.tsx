@@ -8,6 +8,8 @@ import type { IBetResponse } from '../src/interfaces/bet.interface';
 import { getBetsPageData } from '../src/services/get-page-data';
 import { formatDate, pickTranslations } from '../src/utils';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: 'Mis Apuestas | BetDay Lite',
   description:
