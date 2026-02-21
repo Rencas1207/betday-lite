@@ -1,6 +1,7 @@
 import confetti from 'canvas-confetti';
 import { useAtom, useSetAtom } from 'jotai';
 import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { toast } from 'sonner';
 import type { IBet } from '../interfaces/bet.interface';
@@ -11,6 +12,7 @@ import {
 } from '../store/globals';
 
 export const useBetSlip = () => {
+  const router = useRouter();
   const { data: session } = useSession();
   const setShowModal = useSetAtom(loginModalAtom);
   const [pendingBets, setPendingBets] = useAtom(pendingBetsAtom);
@@ -132,6 +134,7 @@ export const useBetSlip = () => {
       if (res.ok) {
         fireConfetti();
         toast.success('¡Apuesta confirmada!');
+        router.refresh();
         setPendingBets([]);
         setStakes({});
         setIsBetSlipOpen(false);

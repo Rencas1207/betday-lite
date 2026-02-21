@@ -1,4 +1,5 @@
 import { supabase } from '@/app/src/lib/supabase';
+import { revalidatePath } from 'next/cache';
 import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
@@ -17,6 +18,8 @@ export async function POST(request: Request) {
         { status: 400 }
       );
     }
+
+    revalidatePath('/profile');
 
     return NextResponse.json({
       success: true,
