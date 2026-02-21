@@ -89,3 +89,16 @@ La aplicación se encuentra desplegada y optimizada en **Vercel**:
 - **Robots**: [https://betday-lite.vercel.app/robots.txt](https://betday-lite.vercel.app/robots.txt)
 
 ---
+
+## 📸 Screenshots
+<img width="2369" height="1288" alt="image" src="https://github.com/user-attachments/assets/3edf6653-d100-4786-9c98-b66fa61ab15a" />
+
+<img width="3064" height="1287" alt="image" src="https://github.com/user-attachments/assets/bc0018a0-5679-4a9c-85d7-39ac449eebe9" />
+
+<img width="2360" height="1270" alt="image" src="https://github.com/user-attachments/assets/5cce8b8e-c162-4c34-8ebf-a61b6687934b" />
+<img width="2265" height="1253" alt="image" src="https://github.com/user-attachments/assets/a4ed2377-84b6-48a9-9830-b860d5dcafc4" />
+
+
+<img width="1895" height="1273" alt="image" src="https://github.com/user-attachments/assets/a5e96b86-e859-4d11-b182-2977c0422a16" />
+
+
