@@ -53,9 +53,19 @@ export const pickTranslations: Record<string, string> = {
 };
 
 export const formatDate = (dateString: string) => {
-  const date = new Date(dateString);
-  const day = String(date.getDate()).padStart(2, '0');
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const year = date.getFullYear();
-  return `${day}/${month}/${year}`;
+  return new Intl.DateTimeFormat('es-PE', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    timeZone: 'America/Lima'
+  }).format(new Date(dateString));
+};
+
+export const formatTime = (dateString: string) => {
+  return new Intl.DateTimeFormat('es-PE', {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: true,
+    timeZone: 'America/Lima'
+  }).format(new Date(dateString));
 };

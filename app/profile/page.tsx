@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Pagination from '../src/components/Pagination';
 import type { IBetResponse } from '../src/interfaces/bet.interface';
 import { getBetsPageData } from '../src/services/get-page-data';
-import { formatDate, pickTranslations } from '../src/utils';
+import { formatDate, formatTime, pickTranslations } from '../src/utils';
 
 export const dynamic = 'force-dynamic';
 
@@ -124,7 +124,7 @@ export default async function Page({
               Mis{' '}
               <Typography
                 variant="small"
-                className="text-[48px] font-black text-emerald-600"
+                className="text-4xl font-black text-emerald-600 md:text-[48px]"
               >
                 Apuestas
               </Typography>
@@ -195,10 +195,7 @@ function BetRow({ bet }: { bet: IBetResponse }) {
           {formatDate(bet.placedAt)}
         </Box>
         <Box className="text-[12px] font-bold text-slate-400">
-          {new Date(bet.placedAt).toLocaleTimeString([], {
-            hour: '2-digit',
-            minute: '2-digit'
-          })}
+          {formatTime(bet.placedAt)}
         </Box>
       </td>
       <td className="px-6 py-5">
