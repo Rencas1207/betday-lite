@@ -30,3 +30,28 @@ body {
   flex-shrink: 0 !important;
   margin-right: 16px;
 }
+
+@layer base {
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #10b981;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #059669;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #10b981 transparent;
+  }
+}
