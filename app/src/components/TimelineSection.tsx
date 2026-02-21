@@ -1,93 +1,81 @@
 'use client';
 
+import { Box } from '@betday-lite/box';
+import { cn } from '@betday-lite/tailwind-utils';
 import { Typography } from '@betday-lite/typography';
-import { useAtom } from 'jotai';
-import { useMemo, useState } from 'react';
+import { ChevronRight } from 'lucide-react';
+import { useRef } from 'react';
+import type { Swiper as SwiperType } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import { FreeMode, Mousewheel } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { type Match } from '../interfaces';
-import { pendingBetsAtom } from '../store/globals';
-
-interface HourGroup {
-  hour: string;
-  matches: Match[];
-}
-
-interface DayGroup {
-  date: string;
-  hours: HourGroup[];
-}
+import { useMatchSelection } from '../hooks/use-match-selection';
+import type { DayGroup } from '../interfaces/matches.interface';
 
 export default function TimelineSection({ matches }: { matches: DayGroup[] }) {
-  const [pendingBets, setPendingBets] = useAtom(pendingBetsAtom);
-  const [selectedDate] = useState(matches[0]?.date);
+  const { toggleBet, isSelected } = useMatchSelection();
+  const swiperRefs = useRef<{ [key: string]: SwiperType }>({});
+  const today = matches[0];
 
-  const allMatchesOfDay = useMemo(() => {
-    const day = matches.find((d) => d.date === selectedDate);
-    if (!day) return [];
-
-    return day.hours.flatMap((hg: HourGroup) =>
-      hg.matches.map((m: Match) => ({ ...m, displayHour: hg.hour }))
-    );
-  }, [selectedDate, matches]);
-
-  const handleBetClick = (match: Match, pick: string, odd: number) => {
-    setPendingBets((prev) => {
-      const otherMatches = prev.filter((b) => b.match.id !== match.id);
-      const isReclickingSamePick = prev.find(
-        (b) => b.match.id === match.id && b.pick === pick
-      );
-
-      if (isReclickingSamePick) return otherMatches;
-
-      return [...otherMatches, { match, pick, odd }];
-    });
-  };
-
-  const isSelected = (matchId: string, pick: string) =>
-    pendingBets.some((bet) => bet.match.id === matchId && bet.pick === pick);
+  if (!today) return null;
 
   return (
-    <div className="w-full space-y-8 overflow-hidden">
-      <div className="relative">
-        <Swiper
-          modules={[FreeMode, Mousewheel]}
-          freeMode={true}
-          mousewheel={{ forceToAxis: true }}
-          slidesPerView="auto"
-          spaceBetween={16}
-          className="w-full overflow-visible! px-4"
-        >
-          {allMatchesOfDay.map((m: Match) => {
-            return (
-              <SwiperSlide
-                key={m.id}
-                style={{ width: '360px' }}
-                className="w-[85vw]! pb-4 sm:w-90!"
-              >
-                <div className="space-y-3">
-                  <div className="group flex h-50 flex-col rounded-4xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:border-emerald-200 hover:shadow-md">
-                    <div className="mb-4 flex items-center justify-between">
+    <Box className="w-full space-y-10 overflow-hidden">
+      {today.leagues.map((league) => (
+        <Box key={league.id} className="space-y-4">
+          <Box className="flex items-center gap-2 px-4">
+            <Box className="h-5 w-1 rounded-full bg-emerald-500" />
+            <Typography
+              variant="h2"
+              className="text-xl font-black tracking-tighter text-slate-800 uppercase italic"
+            >
+              {league.name}
+            </Typography>
+          </Box>
+
+          <Box className="group/slider relative">
+            <button
+              onClick={() => swiperRefs.current[league.id]?.slideNext()}
+              className="absolute top-0 right-0 z-10 flex h-[calc(100%-1rem)] w-20 cursor-pointer items-center justify-end bg-linear-to-l from-slate-50 via-slate-50/80 to-transparent pr-4 transition-all hover:pr-2 active:scale-95 md:flex"
+            >
+              <Box className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-xl ring-1 ring-slate-200 transition-transform group-hover/slider:translate-x-1">
+                <ChevronRight size={24} className="text-emerald-600" />
+              </Box>
+            </button>
+            <Swiper
+              onSwiper={(swiper) => {
+                swiperRefs.current[league.id] = swiper;
+              }}
+              modules={[FreeMode, Mousewheel]}
+              freeMode={true}
+              mousewheel={{ forceToAxis: true }}
+              slidesPerView="auto"
+              spaceBetween={16}
+              watchSlidesProgress={true}
+              slidesOffsetAfter={80}
+              observer={true}
+              observeParents={true}
+              className="w-full overflow-visible! px-4"
+            >
+              {league.matches.map((m) => (
+                <SwiperSlide
+                  key={m.id}
+                  style={{ width: '360px' }}
+                  className="w-[85vw]! pb-4 sm:w-90!"
+                >
+                  <Box className="group flex h-50 flex-col rounded-4xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:border-emerald-200 hover:shadow-md">
+                    <Box className="mb-4 flex items-center justify-between">
                       <Typography
                         variant="small"
-                        className="truncate rounded-lg bg-slate-100 px-3 py-1 text-[10px] font-bold tracking-tight text-slate-500 uppercase"
+                        className="rounded bg-slate-50 px-2 py-1 text-[12px] font-bold text-slate-400"
                       >
-                        {m.league.name}
+                        {m.displayHour} HS
                       </Typography>
-                      <div className="flex items-center gap-1.5">
-                        <Typography
-                          variant="small"
-                          className="font-mono text-[10px] font-bold text-slate-400"
-                        >
-                          {m.displayHour}
-                        </Typography>
-                        <div className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
-                      </div>
-                    </div>
+                      <Box className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
+                    </Box>
 
-                    <div className="mb-5">
+                    <Box className="mb-5">
                       <Typography
                         variant="h3"
                         className="text-lg leading-tight font-black tracking-tighter text-slate-900 uppercase italic"
@@ -101,9 +89,9 @@ export default function TimelineSection({ matches }: { matches: DayGroup[] }) {
                         </Typography>
                         {m.awayTeam.name}
                       </Typography>
-                    </div>
+                    </Box>
 
-                    <div className="mt-auto grid grid-cols-3 gap-2">
+                    <Box className="mt-auto grid grid-cols-3 gap-2">
                       {[
                         { label: 'Local', val: m.market.odds.home },
                         { label: 'Empate', val: m.market.odds.draw },
@@ -113,10 +101,8 @@ export default function TimelineSection({ matches }: { matches: DayGroup[] }) {
                         return (
                           <button
                             key={odd.label}
-                            onClick={() =>
-                              handleBetClick(m, odd.label, odd.val)
-                            }
-                            className={`group relative flex flex-col items-center rounded-2xl py-2.5 transition-all duration-200 ${
+                            onClick={() => toggleBet(m, odd.label, odd.val)}
+                            className={`flex cursor-pointer flex-col items-center rounded-2xl py-2.5 transition-all duration-200 ${
                               active
                                 ? 'bg-slate-900 text-white shadow-lg ring-2 ring-slate-900 ring-offset-2'
                                 : 'border border-transparent bg-slate-50 text-slate-900 hover:border-emerald-200 hover:bg-emerald-50 hover:text-emerald-700'
@@ -124,7 +110,11 @@ export default function TimelineSection({ matches }: { matches: DayGroup[] }) {
                           >
                             <Typography
                               variant="small"
-                              className={`text-[10px] font-bold uppercase ${active ? 'text-slate-400' : 'text-slate-400'}`}
+                              className={cn(
+                                'text-[10px] font-bold text-slate-400 uppercase group-hover:text-emerald-600 active:text-white',
+                                active &&
+                                  'text-slate-400 group-hover:text-slate-400 active:text-slate-400'
+                              )}
                             >
                               {odd.label}
                             </Typography>
@@ -137,14 +127,14 @@ export default function TimelineSection({ matches }: { matches: DayGroup[] }) {
                           </button>
                         );
                       })}
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-      </div>
-    </div>
+                    </Box>
+                  </Box>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </Box>
+        </Box>
+      ))}
+    </Box>
   );
 }

@@ -1,20 +1,52 @@
+import { Box } from '@betday-lite/box';
 import { Typography } from '@betday-lite/typography';
 import BetSidePanel from './src/components/BetSidePanel';
+import MobileTicketButton from './src/components/MobileTicketButton';
 import TimelineSection from './src/components/TimelineSection';
 import PublicLayout from './src/layout/PublicLayout';
 import { getMatches } from './src/services/get-matches.service';
-import { groupMatchesByDateHour } from './src/utils';
+import { groupMatchesByToday } from './src/utils';
 
 export const dynamic = 'force-dynamic';
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'BetDay Lite',
+  url: process.env.NEXT_PUBLIC_BASE_URL,
+  description:
+    'BetDay Lite es tu plataforma de apuestas deportivas y pronósticos en tiempo real.',
+  applicationCategory: 'SportsApplication, FinanceApplication',
+  operatingSystem: 'Android, iOS, Windows, macOS',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'PEN'
+  },
+  author: {
+    '@type': 'Organization',
+    name: 'BetDay Team'
+  },
+  screenshot: `${process.env.NEXT_PUBLIC_BASE_URL}/android-chrome-512x512.png`,
+  featureList: [
+    'Apuestas en vivo',
+    'Pronósticos deportivos',
+    'Gestión de historial de apuestas',
+    'Multi-dispositivo'
+  ]
+};
+
 export default async function Page() {
   const matches = await getMatches();
-  const groupedMatches = groupMatchesByDateHour(matches);
+  const groupedMatches = groupMatchesByToday(matches);
   return (
     <PublicLayout>
-      <main className="flex min-h-screen w-full flex-col items-center justify-start bg-slate-50 px-4 py-10 transition-colors">
-        <section className="w-full max-w-360">
-          <div className="mb-10">
+      <Box
+        as="main"
+        className="flex min-h-screen w-full flex-col items-center justify-start bg-slate-50 px-4 py-10 pb-22.5 transition-colors md:pb-10"
+      >
+        <Box as="section" className="w-full max-w-360">
+          <Box className="mb-10">
             <Typography
               variant="h1"
               className="w-fit text-4xl font-black tracking-tighter text-slate-900 uppercase italic"
@@ -34,22 +66,21 @@ export default async function Page() {
               </Typography>
               .
             </Typography>
-          </div>
+          </Box>
 
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
-            <section className="lg:col-span-8">
+          <Box className="grid grid-cols-1 gap-10 lg:grid-cols-12">
+            <Box as="section" className="lg:col-span-8">
               <TimelineSection matches={groupedMatches} />
-            </section>
-            <aside className="lg:col-span-4">
-              <div className="sticky top-24">
-                <div className="rounded-2xl border border-slate-200 bg-white shadow-sm">
-                  <BetSidePanel />
-                </div>
-              </div>
-            </aside>
-          </div>
-        </section>
-      </main>
+            </Box>
+            <BetSidePanel />
+          </Box>
+          <MobileTicketButton />
+        </Box>
+      </Box>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </PublicLayout>
   );
 }

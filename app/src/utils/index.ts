@@ -1,37 +1,47 @@
-import type { Match } from '../interfaces';
+import type { Match } from '../interfaces/index.interface';
+import type { DayGroup, LeagueGroup } from '../interfaces/matches.interface';
 
-export interface HourGroup {
-  hour: string;
-  matches: Match[];
-}
+export function groupMatchesByToday(matches: Match[]): DayGroup[] {
+  const now = new Date();
+  const todayKey = now.toISOString().split('T')[0];
 
-export interface DayGroup {
-  date: string;
-  hours: HourGroup[];
-}
-
-export function groupMatchesByDateHour(matches: Match[]): DayGroup[] {
-  const groups: Record<string, Record<string, Match[]>> = {};
+  const groups: Record<string, Record<string, LeagueGroup>> = {};
 
   matches.forEach((match) => {
-    const dateObj = new Date(match.startTime);
-    if (isNaN(dateObj.getTime())) return;
+    const originalDate = new Date(match.startTime);
+    if (isNaN(originalDate.getTime())) return;
 
-    const day = dateObj.toISOString().split('T')[0];
-    const hour = dateObj.getHours().toString().padStart(2, '0');
+    const hour = originalDate.getHours().toString().padStart(2, '0');
+    const minutes = originalDate.getMinutes().toString().padStart(2, '0');
 
-    if (!groups[day]) groups[day] = {};
-    if (!groups[day][hour]) groups[day][hour] = [];
+    const leagueId = match.league.id;
 
-    groups[day][hour].push(match);
+    if (!groups[todayKey]) groups[todayKey] = {};
+
+    if (!groups[todayKey][leagueId]) {
+      groups[todayKey][leagueId] = {
+        id: leagueId,
+        name: match.league.name,
+        country: match.league.country,
+        matches: []
+      };
+    }
+
+    groups[todayKey][leagueId].matches.push({
+      ...match,
+      displayHour: `${hour}:${minutes}`
+    });
   });
 
   return Object.entries(groups)
-    .map(([date, hoursObj]) => ({
+    .map(([date, leaguesObj]) => ({
       date,
-      hours: Object.entries(hoursObj)
-        .map(([hour, matches]) => ({ hour, matches }))
-        .sort((a, b) => Number(a.hour) - Number(b.hour))
+      leagues: Object.values(leaguesObj).map((league) => ({
+        ...league,
+        matches: league.matches.sort((a, b) =>
+          a.displayHour.localeCompare(b.displayHour)
+        )
+      }))
     }))
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 }

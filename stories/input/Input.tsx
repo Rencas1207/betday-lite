@@ -4,11 +4,12 @@ import { cn } from '../tailwind-utils';
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
+  errorMessage?: string;
   icon?: LucideIcon;
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ label, icon: Icon, className, ...props }, ref) => {
+  ({ label, icon: Icon, errorMessage, className, ...props }, ref) => {
     const inputId = useId();
     return (
       <div className="w-full space-y-1.5">
@@ -28,7 +29,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                 Icon
               ) : (
                 <Icon
-                  className="absolute top-1/2 left-4 -translate-y-1/2 text-slate-400"
+                  className="absolute top-6 left-4 -translate-y-1/2 text-slate-400"
                   size={18}
                 />
               )}
@@ -39,12 +40,17 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             ref={ref}
             id={inputId}
             className={cn(
-              'h-12 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 text-sm font-bold text-slate-900 transition-all outline-none focus:border-emerald-500 focus:bg-white focus:ring-4 focus:ring-emerald-500/5 disabled:cursor-not-allowed disabled:opacity-50',
+              'text-md h-12 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 font-bold text-slate-900 transition-all outline-none focus:border-emerald-500 focus:bg-white focus:ring-4 focus:ring-emerald-500/5 disabled:cursor-not-allowed disabled:opacity-50',
               Icon && 'pl-12',
               className
             )}
             {...props}
           />
+          {errorMessage && (
+            <span className="mt-1 ml-2 text-[14px] font-bold text-red-500">
+              {errorMessage}
+            </span>
+          )}
         </div>
       </div>
     );

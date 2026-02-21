@@ -1,5 +1,5 @@
 import { atom } from 'jotai';
-import type { Match } from '../interfaces';
+import type { Match } from '../interfaces/index.interface';
 
 interface PendingBet {
   match: Match;
@@ -9,3 +9,4 @@ interface PendingBet {
 
 export const loginModalAtom = atom(false);
 export const pendingBetsAtom = atom<PendingBet[]>([]);
+export const isBetSlipOpenAtom = atom(false);

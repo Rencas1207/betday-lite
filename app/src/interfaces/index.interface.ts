@@ -42,6 +42,10 @@ export interface MatchesTodayResponse {
   matches: Match[];
 }
 
+export interface MatchesApiData {
+  matches: Match[];
+}
+
 export interface MatchesApiResponse {
   ok: boolean;
   data: MatchesApiData;
@@ -50,12 +54,4 @@ export interface MatchesApiResponse {
 export interface GroupedMatch {
   hour: string;
   matches: Match[];
-}
-
-export type BetStatus = 'PENDING' | 'WON' | 'LOST';
-export type BetPick = 'HOME' | 'DRAW' | 'AWAY';
-
-export interface UserBetsResponse {
-  total: number;
-  data: Bet[];
 }

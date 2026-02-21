@@ -1,7 +1,8 @@
+import { Box } from '@betday-lite/box';
 import { Typography } from '@betday-lite/typography';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
-import type { Bet } from '../interfaces/bet.interface';
+import type { IBetResponse } from '../interfaces/bet.interface';
 
 const Pagination = ({
   currentPage,
@@ -13,12 +14,12 @@ const Pagination = ({
   currentPage: number;
   totalPages: number;
   pageNumbers: number[];
-  bets: Bet[];
+  bets: IBetResponse[];
   totalItems: number;
 }) => {
   return (
-    <div className="flex items-center justify-between border-t border-slate-100 bg-white px-8 py-5">
-      <div className="flex items-center gap-2">
+    <Box className="flex flex-col items-center justify-center border-t border-slate-100 bg-white px-8 py-5 sm:justify-between md:flex-row">
+      <Box className="flex items-center gap-2">
         <Link
           href={`?page=${Math.max(1, currentPage - 1)}`}
           className={`flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 transition-all ${
@@ -30,7 +31,7 @@ const Pagination = ({
           <ChevronLeft size={20} />
         </Link>
 
-        <div className="flex gap-1.5">
+        <Box className="flex gap-1.5">
           {pageNumbers.map((num) => (
             <Link
               key={num}
@@ -44,7 +45,7 @@ const Pagination = ({
               {num}
             </Link>
           ))}
-        </div>
+        </Box>
 
         <Link
           href={`?page=${Math.min(totalPages, currentPage + 1)}`}
@@ -56,9 +57,9 @@ const Pagination = ({
         >
           <ChevronRight size={20} />
         </Link>
-      </div>
+      </Box>
 
-      <div className="hidden text-[12px] font-black tracking-widest text-slate-400 uppercase sm:block">
+      <Box className="hidden text-[12px] font-black tracking-widest text-slate-400 uppercase sm:block">
         Mostrando{' '}
         <Typography variant="small" className="text-sm">
           {bets.length}
@@ -68,8 +69,8 @@ const Pagination = ({
           {totalItems}
         </Typography>{' '}
         resultados
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 

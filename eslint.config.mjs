@@ -44,6 +44,7 @@ export default defineConfig([
     'coverage/**',
     'postcss.config.mjs',
     'eslint.config.mjs',
+    'next-sitemap.config.js',
     '.storybook/**',
     'node_modules/**',
     'next-env.d.ts'

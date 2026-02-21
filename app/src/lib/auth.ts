@@ -10,14 +10,22 @@ export const authOptions: NextAuthOptions = {
         password: { label: 'Password', type: 'password' }
       },
       authorize(credentials) {
-        if (
-          credentials?.username === 'user' &&
-          credentials?.password === '1234'
-        ) {
+        const username = credentials?.username?.trim();
+        const password = credentials?.password?.trim();
+
+        if (username === 'user_01' && password === '1234BetDayLite') {
           return {
-            id: '1',
-            name: 'Test User',
-            email: 'test@example.com'
+            id: 'b7e2cd3b-702c-4ef3-b2a6-7b1c706993f7',
+            name: 'User 01',
+            email: 'user_01@example.com'
+          };
+        }
+
+        if (username === 'new_user' && password === '1234BetDayLite') {
+          return {
+            id: 'f868eeb5-cdb3-4c7d-a64b-8a65313db439',
+            name: 'NewUser',
+            email: 'empty@example.com'
           };
         }
 
